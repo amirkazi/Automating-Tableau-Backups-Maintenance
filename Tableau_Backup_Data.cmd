@@ -19,5 +19,9 @@ ECHO BACKUP CREATED
 CALL tsm settings export -f "%folder_path%\%backup_file_name%-config-settings.json"
 ECHO CONFIG FILE CREATED 
 
+:: RUN PYTHON FILE
+SET PYTHON_FILE_ADDRESS="C:\Scripts\Tableau_Data_Backup_Maintenance\Cleaning_Backups.py"
+CALL python %PYTHON_FILE_ADDRESS%
+
 
 
