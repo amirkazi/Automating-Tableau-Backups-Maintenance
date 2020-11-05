@@ -3,7 +3,7 @@ Use: Delete .tsbak tableau files that are out-dated and unnecessary
     using certain filters such as number of days elapsed, and the
     minimum number of backups
 
-Written by: Amir Kazi
+Written by: Amir Kazi : kazi@uchicago.edu
 Date: 28th May 2020
 '''
 import os
