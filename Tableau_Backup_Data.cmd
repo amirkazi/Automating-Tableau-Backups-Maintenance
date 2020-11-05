@@ -9,19 +9,22 @@ SET folder_path="E:\Tableau_Backups"
 ::CALL tsm configuration set -k basefilepath.backuprestore -v %folder_path%
 
 
+:: RUN PYTHON FILE
+SET PYTHON_FILE_ADDRESS="C:\Scripts\Tableau_Data_Backup_Maintenance\Cleaning_Backups.py"
+CALL python %PYTHON_FILE_ADDRESS%
+ECHO %PYTHON_FILE_ADDRESS%
+ECHO PYTHON FILE RAN
+
+
 :: Creating data backup
-SET backup_file_name=Backup_Data
+SET backup_file_name=Internal_Backup
 ECHO CREATING BACKUP. PLEASE WAIT.
-CALL tsm maintenance backup -f %backup_file_name% -d
+CALL tsm maintenance backup -f %backup_file_name% -d --override-disk-space-check
 ECHO BACKUP CREATED
+
 
 :: Creating config file backup
 CALL tsm settings export -f "%folder_path%\%backup_file_name%-config-settings.json"
 ECHO CONFIG FILE CREATED 
 
-:: RUN PYTHON FILE
-SET PYTHON_FILE_ADDRESS="C:\Scripts\Tableau_Data_Backup_Maintenance\Cleaning_Backups.py"
-CALL python %PYTHON_FILE_ADDRESS%
-
-
-
+::cmd /k
