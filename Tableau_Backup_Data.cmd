@@ -1,5 +1,5 @@
 :: Script to backup Tableau Data & Config File
-:: Written by Kazi
+:: Written by: Amir Kazi : kazi@uchicago.edu
 :: Date: 27th May 2020
 
 SET folder_path="E:\Tableau_Backups"
