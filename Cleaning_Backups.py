@@ -19,7 +19,7 @@ if os.path.exists(directory) :
     print("Current Working Directory " , os.getcwd())
 
     list_of_backups = []
-    for file in os.listdir():
+    for file in os.listdir(os.getcwd()):
         if file.endswith('tsbak'):
             list_of_backups.append(file)
 
